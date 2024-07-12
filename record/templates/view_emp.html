@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+        .employee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+          }
+          .employee-table th, .employee-table td {
+            padding: 12px 15px;
+          }
+          .employee-table th {
+            background-color: #343a40;
+            color: #fff;
+          }
+          .employee-table tr {
+            border-bottom: 1px solid #ddd;
+          }
+          .employee-table tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+          }
+          .employee-table tr:hover {
+            background-color: #f1f1f1;
+          }
+          .employee-table td {
+            color: #333;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>All Employee Detail!</h1>
+            <hr>
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <table class="employee-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Bonus</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Role</th>
+                <th scope="col">Department</th>
+                <th scope="col">Location</th>
+                <th scope="col">Hiredate</th>
+              </tr>
+            </thead>
+            {% for emp in emp %}
+            <tbody>
+              <tr>
+                <th scope="row">{{emp.id}}</th>
+                <td>{{emp.first_name}}</td>
+                <td>{{emp.last_name}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.bonus}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.role.name}}</td>
+                <td>{{emp.dept.name}}</td>
+                <td>{{emp.dept.location}}</td>
+                <td>{{emp.hire_date}}</td>
+              </tr>
+              
+                
+            </tbody>
+            {% endfor %}
+          </table>
+        </div>
+        <script src="" async defer></script>
+    </body>
+</html>
